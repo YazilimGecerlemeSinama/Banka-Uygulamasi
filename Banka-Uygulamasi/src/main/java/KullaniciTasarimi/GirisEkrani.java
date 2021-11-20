@@ -4,6 +4,8 @@
  */
 package KullaniciTasarimi;
 
+import java.awt.Color;
+
 /**
  *
  * @author merve
@@ -53,10 +55,26 @@ public class GirisEkrani extends javax.swing.JFrame {
         GirisButon.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         GirisButon.setText("GİRİŞ");
         GirisButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GirisButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                GirisButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                GirisButonMouseExited(evt);
+            }
+        });
 
         BasvurButon.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         BasvurButon.setText("Hemen BAŞVUR");
         BasvurButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BasvurButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BasvurButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BasvurButonMouseExited(evt);
+            }
+        });
 
         BasvurText.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         BasvurText.setText("Müşterimiz olmak için");
@@ -130,6 +148,25 @@ public class GirisEkrani extends javax.swing.JFrame {
     private void TCNOTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCNOTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TCNOTextActionPerformed
+    private Color orijinalBgColor;
+    
+    private void GirisButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GirisButonMouseEntered
+        orijinalBgColor = GirisButon.getBackground();
+        GirisButon.setBackground(Color.GRAY);
+    }//GEN-LAST:event_GirisButonMouseEntered
+
+    private void GirisButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GirisButonMouseExited
+        GirisButon.setBackground(orijinalBgColor);
+    }//GEN-LAST:event_GirisButonMouseExited
+    private Color orijinalBgColor2;
+    private void BasvurButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BasvurButonMouseEntered
+        orijinalBgColor2 = BasvurButon.getBackground();
+        BasvurButon.setBackground(Color.GRAY);
+    }//GEN-LAST:event_BasvurButonMouseEntered
+
+    private void BasvurButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BasvurButonMouseExited
+        BasvurButon.setBackground(orijinalBgColor2);
+    }//GEN-LAST:event_BasvurButonMouseExited
 
     /**
      * @param args the command line arguments

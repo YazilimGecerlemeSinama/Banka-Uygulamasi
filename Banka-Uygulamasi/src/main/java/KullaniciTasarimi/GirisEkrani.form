@@ -110,6 +110,10 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GirisButonMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GirisButonMouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BasvurButon">
           <Properties>
@@ -121,6 +125,10 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BasvurButonMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BasvurButonMouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="BasvurText">
           <Properties>
