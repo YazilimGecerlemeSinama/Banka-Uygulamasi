@@ -1,4 +1,5 @@
 package KullaniciTasarimi;
+import KullaniciTasarimi.ayarlar.ActionAyarlari;
 import KullaniciTasarimi.ayarlar.ButonAyarlari;
 import KullaniciTasarimi.ayarlar.Duzenleyici;
 import KullaniciTasarimi.ayarlar.TextAyarlari;
@@ -201,6 +202,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
     /*
     Text Odaklanması
     */    
+    
     private void TCNOTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TCNOTextFocusGained
         TextAyarlari.chechTheTextFocusGained(TCNOText, KimlikTextOrijinal);
     }//GEN-LAST:event_TCNOTextFocusGained
@@ -225,8 +227,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
     }//GEN-LAST:event_GirisButonActionPerformed
 
     private void BasvurButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasvurButonActionPerformed
-        this.setVisible(false);
-        new BasvuruEkrani().setVisible(true);
+        ActionAyarlari.setVisible(this, new BasvuruEkrani());
     }//GEN-LAST:event_BasvurButonActionPerformed
 
   

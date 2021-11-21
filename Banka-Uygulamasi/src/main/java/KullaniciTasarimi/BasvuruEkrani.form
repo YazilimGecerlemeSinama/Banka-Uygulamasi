@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="BasvuruEkraniPaneli" min="-2" pref="436" max="-2" attributes="0"/>
+          <Component id="BasvuruEkraniPaneli" alignment="0" pref="422" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -86,9 +86,9 @@
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="CevapField" alignment="2" min="-2" pref="292" max="-2" attributes="0"/>
                       <Component id="GuvenlikSorusu" alignment="2" min="-2" pref="292" max="-2" attributes="0"/>
-                      <Component id="BaşvurButon" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="BasvurButon" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -126,9 +126,9 @@
                       <Component id="CevapField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="CevapText" linkSize="3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="BaşvurButon" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="BasvurButon" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -269,7 +269,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Ba&#x15f;vurButon">
+        <Component class="javax.swing.JButton" name="BasvurButon">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f1" green="f1" red="f1" type="rgb"/>
@@ -283,7 +283,9 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Ba&#x15f;vurButonActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BasvurButonMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BasvurButonMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BasvurButonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

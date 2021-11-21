@@ -1,12 +1,21 @@
 
 package KullaniciTasarimi;
 
+import KullaniciTasarimi.ayarlar.ActionAyarlari;
+import KullaniciTasarimi.ayarlar.ButonAyarlari;
+import KullaniciTasarimi.ayarlar.Duzenleyici;
+import KullaniciTasarimi.ayarlar.TextAyarlari;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 
-public class BasvuruEkrani extends javax.swing.JFrame {
+
+public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
 
     
     public BasvuruEkrani() {
         initComponents();
+        getEdits();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -26,7 +35,7 @@ public class BasvuruEkrani extends javax.swing.JFrame {
         GuvenlikSorusu = new javax.swing.JComboBox<>();
         CevapText = new javax.swing.JLabel();
         CevapField = new javax.swing.JTextField();
-        BaşvurButon = new javax.swing.JButton();
+        BasvurButon = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orenda Bank Başvuru Ekranı");
@@ -84,13 +93,21 @@ public class BasvuruEkrani extends javax.swing.JFrame {
 
         CevapField.setBackground(new java.awt.Color(255, 255, 255));
 
-        BaşvurButon.setBackground(new java.awt.Color(241, 241, 241));
-        BaşvurButon.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        BaşvurButon.setText("BAŞVUR");
-        BaşvurButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BaşvurButon.addActionListener(new java.awt.event.ActionListener() {
+        BasvurButon.setBackground(new java.awt.Color(241, 241, 241));
+        BasvurButon.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        BasvurButon.setText("BAŞVUR");
+        BasvurButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BasvurButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BasvurButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BasvurButonMouseExited(evt);
+            }
+        });
+        BasvurButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BaşvurButonActionPerformed(evt);
+                BasvurButonActionPerformed(evt);
             }
         });
 
@@ -128,8 +145,8 @@ public class BasvuruEkrani extends javax.swing.JFrame {
                 .addGroup(BasvuruEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(CevapField, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GuvenlikSorusu, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BaşvurButon))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(BasvurButon))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         BasvuruEkraniPaneliLayout.setVerticalGroup(
             BasvuruEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,9 +176,9 @@ public class BasvuruEkrani extends javax.swing.JFrame {
                 .addGroup(BasvuruEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CevapField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CevapText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BaşvurButon)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(BasvurButon)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         BasvuruEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AdSoyadField, AdSoyadText, CevapField, CevapText, GuvenlikSorusu, GüvenlikSorusuText, TCNoField, TCNoText, TelefonNoField, TelefonNoText1});
@@ -170,7 +187,7 @@ public class BasvuruEkrani extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BasvuruEkraniPaneli, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(BasvuruEkraniPaneli, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,13 +197,33 @@ public class BasvuruEkrani extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @Override
+    public void getEdits() {
+        this.setLocationRelativeTo(null);
+        BasvuruEkraniPaneli.setFocusable(true);
+        TextAyarlari.setOnlyAlphabetic(AdSoyadField);
+        TextAyarlari.setOnlyNumber(TCNoField);
+        TextAyarlari.setOnlyNumber(TelefonNoField);
+        TextAyarlari.setMaxLimit(TCNoField, 11);
+        TextAyarlari.setMaxLimit(TelefonNoField, 11);
+    }
+    
     private void AdSoyadFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdSoyadFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AdSoyadFieldActionPerformed
 
-    private void BaşvurButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaşvurButonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BaşvurButonActionPerformed
+    private void BasvurButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasvurButonActionPerformed
+        JOptionPane.showMessageDialog(this, "Başvurunuz kabul edilmiştir.");
+        ActionAyarlari.setVisible(this, new GirisEkrani());
+    }//GEN-LAST:event_BasvurButonActionPerformed
+
+    private void BasvurButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BasvurButonMouseEntered
+        ButonAyarlari.setBgFg(BasvurButon, Color.DARK_GRAY, Color.WHITE);
+    }//GEN-LAST:event_BasvurButonMouseEntered
+
+    private void BasvurButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BasvurButonMouseExited
+        ButonAyarlari.setorijinalBgFg(BasvurButon);
+    }//GEN-LAST:event_BasvurButonMouseExited
 
     
     public static void main(String args[]) {
@@ -201,8 +238,8 @@ public class BasvuruEkrani extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AdSoyadField;
     private javax.swing.JLabel AdSoyadText;
+    private javax.swing.JButton BasvurButon;
     private javax.swing.JPanel BasvuruEkraniPaneli;
-    private javax.swing.JButton BaşvurButon;
     private javax.swing.JTextField CevapField;
     private javax.swing.JLabel CevapText;
     private javax.swing.JComboBox<String> GuvenlikSorusu;
@@ -214,4 +251,6 @@ public class BasvuruEkrani extends javax.swing.JFrame {
     private javax.swing.JTextField TelefonNoField;
     private javax.swing.JLabel TelefonNoText1;
     // End of variables declaration//GEN-END:variables
+
+    
 }
