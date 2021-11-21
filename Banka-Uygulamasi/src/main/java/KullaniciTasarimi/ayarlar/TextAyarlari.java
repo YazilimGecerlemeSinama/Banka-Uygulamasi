@@ -34,7 +34,7 @@ public class TextAyarlari {
         else {
             textField.setForeground(Color.BLACK);
         }
-        textField.setForeground(OrijinalFgColor);
+        
     }
     
     /*
