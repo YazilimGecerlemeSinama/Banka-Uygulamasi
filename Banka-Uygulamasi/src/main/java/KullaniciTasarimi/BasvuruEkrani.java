@@ -146,7 +146,7 @@ public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
                     .addComponent(CevapField, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GuvenlikSorusu, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BasvurButon))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         BasvuruEkraniPaneliLayout.setVerticalGroup(
             BasvuruEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +178,7 @@ public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
                     .addComponent(CevapText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(BasvurButon)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         BasvuruEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AdSoyadField, AdSoyadText, CevapField, CevapText, GuvenlikSorusu, GüvenlikSorusuText, TCNoField, TCNoText, TelefonNoField, TelefonNoText1});
@@ -187,11 +187,11 @@ public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BasvuruEkraniPaneli, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+            .addComponent(BasvuruEkraniPaneli, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BasvuruEkraniPaneli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BasvuruEkraniPaneli, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
         pack();

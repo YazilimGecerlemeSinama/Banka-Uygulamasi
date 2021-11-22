@@ -45,7 +45,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="88" max="32767" attributes="0"/>
+                  <EmptySpace pref="96" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="OrendaBankText" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="HoşGeldinizText" alignment="2" min="-2" max="-2" attributes="0"/>
@@ -66,7 +66,7 @@
                   <Component id="OrendaBankText" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="HoşGeldinizText" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="59" max="32767" attributes="0"/>
+                  <EmptySpace pref="73" max="32767" attributes="0"/>
                   <Component id="TCNOText" linkSize="2" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="SifreText" linkSize="2" min="-2" max="-2" attributes="0"/>

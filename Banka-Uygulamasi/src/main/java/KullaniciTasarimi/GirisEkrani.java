@@ -112,7 +112,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
         GirisEkraniPaneliLayout.setHorizontalGroup(
             GirisEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GirisEkraniPaneliLayout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addGroup(GirisEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(OrendaBankText)
                     .addComponent(HoşGeldinizText)
@@ -135,7 +135,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
                 .addComponent(OrendaBankText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(HoşGeldinizText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(TCNOText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(SifreText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,7 +223,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
     Buton Actions
     */
     private void GirisButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GirisButonActionPerformed
-        
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_GirisButonActionPerformed
 
     private void BasvurButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasvurButonActionPerformed

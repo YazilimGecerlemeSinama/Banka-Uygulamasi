@@ -24,12 +24,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="BasvuruEkraniPaneli" alignment="0" pref="422" max="32767" attributes="0"/>
+          <Component id="BasvuruEkraniPaneli" alignment="0" pref="414" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="BasvuruEkraniPaneli" alignment="0" max="32767" attributes="0"/>
+          <Component id="BasvuruEkraniPaneli" alignment="0" pref="450" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -88,7 +88,7 @@
                       <Component id="GuvenlikSorusu" alignment="2" min="-2" pref="292" max="-2" attributes="0"/>
                       <Component id="BasvurButon" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="8" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -128,7 +128,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="BasvurButon" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
