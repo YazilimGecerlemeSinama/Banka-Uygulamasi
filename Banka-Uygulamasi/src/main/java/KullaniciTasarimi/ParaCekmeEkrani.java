@@ -1,10 +1,14 @@
 
 package KullaniciTasarimi;
 
+import KullaniciTasarimi.ayarlar.ActionAyarlari;
 import KullaniciTasarimi.ayarlar.Duzenleyici;
+import KullaniciTasarimi.ayarlar.TextAyarlari;
+import javax.swing.JOptionPane;
 
 public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
 
+    private int CekilenMiktar = 0;
    
     public ParaCekmeEkrani() {
         initComponents();
@@ -56,27 +60,35 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
         ToplamBakiyeText1.setText("Çekmek İstediğiniz Tutar:");
 
         ParaCekmeText.setBackground(new java.awt.Color(255, 255, 255));
+        ParaCekmeText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ParaCekmeTextKeyReleased(evt);
+            }
+        });
 
         ParaCekmeButon.setBackground(new java.awt.Color(0, 51, 51));
         ParaCekmeButon.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         ParaCekmeButon.setForeground(new java.awt.Color(255, 255, 255));
         ParaCekmeButon.setText("Para Çek");
         ParaCekmeButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ParaCekmeButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ParaCekmeButonActionPerformed(evt);
+            }
+        });
 
         GeriIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\GeriIcon.png")); // NOI18N
+        GeriIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GeriIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GeriIconMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout ParaCekmeEkraniPaneliLayout = new javax.swing.GroupLayout(ParaCekmeEkraniPaneli);
         ParaCekmeEkraniPaneli.setLayout(ParaCekmeEkraniPaneliLayout);
         ParaCekmeEkraniPaneliLayout.setHorizontalGroup(
             ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(AdSoyadText, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ParaCekmeEkraniPaneliLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ParaCekmeButon)
-                .addGap(50, 50, 50))
             .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
                 .addGroup(ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
@@ -90,12 +102,21 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
                                 .addComponent(ParaCekmeText, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
                                 .addGap(187, 187, 187)
-                                .addComponent(BakiyeText, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(MesajText, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(BakiyeText, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(GeriIcon)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AdSoyadText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MesajText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ParaCekmeEkraniPaneliLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ParaCekmeButon)
+                .addGap(74, 74, 74))
         );
 
         ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BakiyeText, ToplamBakiyeText, ToplamBakiyeText1});
@@ -119,7 +140,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
                     .addComponent(ParaCekmeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(ParaCekmeButon)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AdSoyadText, MesajText});
@@ -130,19 +151,40 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ParaCekmeEkraniPaneli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(ParaCekmeEkraniPaneli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ParaCekmeEkraniPaneli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ParaCekmeEkraniPaneli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+    Kullanıcının bastığı tuşu bıraktığı andaki gerçekleşecek işlemleri belirler.
+    */
+    private void ParaCekmeTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ParaCekmeTextKeyReleased
+        this.CekilenMiktar = TextAyarlari.checkTheTextKeyReleased(ParaCekmeText, 5000);
+        
+    }//GEN-LAST:event_ParaCekmeTextKeyReleased
+
+    private void GeriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GeriIconMouseClicked
+       ActionAyarlari.setVisible(this, new HesapEkrani());
+    }//GEN-LAST:event_GeriIconMouseClicked
+
+    private void ParaCekmeButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParaCekmeButonActionPerformed
+       JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştiriliyor.\n" + "Çekilen Tutar: " + CekilenMiktar  + "TL");
+    }//GEN-LAST:event_ParaCekmeButonActionPerformed
+
     @Override
     public void getEdits() {
         this.setLocationRelativeTo(null);
+        ParaCekmeEkraniPaneli.setFocusable(true);
+        TextAyarlari.setOnlyNumber(ParaCekmeText);
+        TextAyarlari.setMaxLimit(ParaCekmeText, 4);
     }
     public static void main(String args[]) {
         

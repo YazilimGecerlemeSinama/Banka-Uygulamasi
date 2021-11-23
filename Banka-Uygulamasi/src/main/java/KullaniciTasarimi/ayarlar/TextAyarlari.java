@@ -91,5 +91,22 @@ public class TextAyarlari {
         
     });
     }
+    
+    /*
+    Para miktarı ayaraları
+    */
+    
+    public static int checkTheTextKeyReleased(JTextField textField, int MoneyLimit){
+        String text = textField.getText();
+        if(!text.equals("")){
+            int miktar = Integer.valueOf(text);
+            if(miktar > MoneyLimit){
+                miktar = MoneyLimit;
+                textField.setText(String.valueOf(miktar));
+            }
+            return miktar;
+        }
+        return 0;
+    }
 }
 
