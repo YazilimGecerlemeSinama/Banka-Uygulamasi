@@ -24,7 +24,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
         MesajText = new javax.swing.JLabel();
         ToplamBakiyeText = new javax.swing.JLabel();
         BakiyeText = new javax.swing.JLabel();
-        ToplamBakiyeText1 = new javax.swing.JLabel();
+        CekilenTutarText = new javax.swing.JLabel();
         ParaCekmeText = new javax.swing.JTextField();
         ParaCekmeButon = new javax.swing.JButton();
         GeriIcon = new javax.swing.JLabel();
@@ -54,10 +54,10 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
         BakiyeText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BakiyeText.setText("[Bakiye]");
 
-        ToplamBakiyeText1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        ToplamBakiyeText1.setForeground(new java.awt.Color(0, 51, 51));
-        ToplamBakiyeText1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        ToplamBakiyeText1.setText("Çekmek İstediğiniz Tutar:");
+        CekilenTutarText.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        CekilenTutarText.setForeground(new java.awt.Color(0, 51, 51));
+        CekilenTutarText.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        CekilenTutarText.setText("Çekmek İstediğiniz Tutar:");
 
         ParaCekmeText.setBackground(new java.awt.Color(255, 255, 255));
         ParaCekmeText.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -96,7 +96,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
                         .addGroup(ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ParaCekmeEkraniPaneliLayout.createSequentialGroup()
                                 .addGroup(ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(ToplamBakiyeText1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CekilenTutarText, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ToplamBakiyeText, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ParaCekmeText, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,7 +119,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
                 .addGap(74, 74, 74))
         );
 
-        ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BakiyeText, ToplamBakiyeText, ToplamBakiyeText1});
+        ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BakiyeText, CekilenTutarText, ToplamBakiyeText});
 
         ParaCekmeEkraniPaneliLayout.setVerticalGroup(
             ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +136,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
                     .addComponent(ToplamBakiyeText))
                 .addGap(18, 18, 18)
                 .addGroup(ParaCekmeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ToplamBakiyeText1)
+                    .addComponent(CekilenTutarText)
                     .addComponent(ParaCekmeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(ParaCekmeButon)
@@ -145,7 +145,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
 
         ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AdSoyadText, MesajText});
 
-        ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BakiyeText, ParaCekmeText, ToplamBakiyeText, ToplamBakiyeText1});
+        ParaCekmeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BakiyeText, CekilenTutarText, ParaCekmeText, ToplamBakiyeText});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,13 +221,13 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdSoyadText;
     private javax.swing.JLabel BakiyeText;
+    private javax.swing.JLabel CekilenTutarText;
     private javax.swing.JLabel GeriIcon;
     private javax.swing.JLabel MesajText;
     private javax.swing.JButton ParaCekmeButon;
     private javax.swing.JPanel ParaCekmeEkraniPaneli;
     private javax.swing.JTextField ParaCekmeText;
     private javax.swing.JLabel ToplamBakiyeText;
-    private javax.swing.JLabel ToplamBakiyeText1;
     // End of variables declaration//GEN-END:variables
 
     
