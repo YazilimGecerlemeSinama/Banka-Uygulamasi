@@ -177,6 +177,7 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
 
     private void ParaCekmeButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParaCekmeButonActionPerformed
        JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştiriliyor.\n" + "Çekilen Tutar: " + CekilenMiktar  + "TL");
+       ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_ParaCekmeButonActionPerformed
 
     @Override

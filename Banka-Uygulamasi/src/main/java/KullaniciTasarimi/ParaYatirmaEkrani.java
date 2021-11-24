@@ -1,14 +1,22 @@
 
 package KullaniciTasarimi;
 
+import KullaniciTasarimi.ayarlar.ActionAyarlari;
+import KullaniciTasarimi.ayarlar.Duzenleyici;
+import KullaniciTasarimi.ayarlar.TextAyarlari;
+import javax.swing.JOptionPane;
 
-public class ParaYatirmaEkrani extends javax.swing.JFrame {
 
+public class ParaYatirmaEkrani extends javax.swing.JFrame implements Duzenleyici {
+
+    private int YatirilanMiktar = 0;
+    
     public ParaYatirmaEkrani() {
         initComponents();
+        getEdits();
     }
 
-   
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -149,21 +157,34 @@ public class ParaYatirmaEkrani extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    @Override
+    public void getEdits() {
+        this.setLocationRelativeTo(null);
+        ParaYatirmaEkraniPaneli.setFocusable(true);
+        TextAyarlari.setOnlyNumber(ParaYatirmaText);
+        TextAyarlari.setMaxLimit(ParaYatirmaText, 4);
+    }
+    
+    
     private void ParaYatirmaTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ParaYatirmaTextKeyReleased
-        
+        this.YatirilanMiktar = TextAyarlari.checkTheTextKeyReleased(ParaYatirmaText, 5000);
+
     }//GEN-LAST:event_ParaYatirmaTextKeyReleased
 
     private void ParaYatirmaButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParaYatirmaButonActionPerformed
-       
+        JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştiriliyor.\n" + "Yatırılan Tutar: " + YatirilanMiktar + "TL");
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_ParaYatirmaButonActionPerformed
 
     private void GeriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GeriIconMouseClicked
- 
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_GeriIconMouseClicked
 
     
     public static void main(String args[]) {
         
+       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -180,7 +201,7 @@ public class ParaYatirmaEkrani extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ParaYatirmaEkrani.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-                
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ParaYatirmaEkrani().setVisible(true);
@@ -199,4 +220,6 @@ public class ParaYatirmaEkrani extends javax.swing.JFrame {
     private javax.swing.JLabel ToplamBakiyeText;
     private javax.swing.JLabel YatiralanTutarText;
     // End of variables declaration//GEN-END:variables
+
+    
 }
