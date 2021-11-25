@@ -2,8 +2,10 @@
 package KullaniciTasarimi;
 
 import KullaniciTasarimi.ayarlar.ActionAyarlari;
+import KullaniciTasarimi.ayarlar.ButonAyarlari;
 import KullaniciTasarimi.ayarlar.Duzenleyici;
 import KullaniciTasarimi.ayarlar.TextAyarlari;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
@@ -55,6 +57,14 @@ public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
         SOdemeButon.setForeground(new java.awt.Color(255, 255, 255));
         SOdemeButon.setText("Öde");
         SOdemeButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SOdemeButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SOdemeButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SOdemeButonMouseExited(evt);
+            }
+        });
         SOdemeButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SOdemeButonActionPerformed(evt);
@@ -109,6 +119,14 @@ public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
         IOdemeButon.setForeground(new java.awt.Color(255, 255, 255));
         IOdemeButon.setText("Öde");
         IOdemeButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IOdemeButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                IOdemeButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                IOdemeButonMouseExited(evt);
+            }
+        });
         IOdemeButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IOdemeButonActionPerformed(evt);
@@ -120,6 +138,14 @@ public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
         DOdemeButon.setForeground(new java.awt.Color(255, 255, 255));
         DOdemeButon.setText("Öde");
         DOdemeButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DOdemeButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DOdemeButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DOdemeButonMouseExited(evt);
+            }
+        });
         DOdemeButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DOdemeButonActionPerformed(evt);
@@ -131,6 +157,14 @@ public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
         EOdemeButon.setForeground(new java.awt.Color(255, 255, 255));
         EOdemeButon.setText("Öde");
         EOdemeButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EOdemeButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EOdemeButonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EOdemeButonMouseExited(evt);
+            }
+        });
         EOdemeButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EOdemeButonActionPerformed(evt);
@@ -236,8 +270,10 @@ public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
         OdemelerEkraniPaneli.setFocusable(true);
     }
     
+    
     private void SOdemeButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SOdemeButonActionPerformed
         JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştirildi.");
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_SOdemeButonActionPerformed
 
     private void GeriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GeriIconMouseClicked
@@ -246,15 +282,55 @@ public class OdemelerEkrani extends javax.swing.JFrame implements Duzenleyici {
 
     private void IOdemeButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IOdemeButonActionPerformed
         JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştirildi.");
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_IOdemeButonActionPerformed
 
     private void DOdemeButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DOdemeButonActionPerformed
         JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştirildi.");
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_DOdemeButonActionPerformed
 
     private void EOdemeButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EOdemeButonActionPerformed
         JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştirildi.");
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_EOdemeButonActionPerformed
+
+    /*
+    buton renklendirme
+    */
+    
+    
+    private void SOdemeButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SOdemeButonMouseEntered
+        ButonAyarlari.setBgFg(SOdemeButon, Color.DARK_GRAY, Color.WHITE);
+    }//GEN-LAST:event_SOdemeButonMouseEntered
+
+    private void SOdemeButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SOdemeButonMouseExited
+       ButonAyarlari.setorijinalBgFg(SOdemeButon);
+    }//GEN-LAST:event_SOdemeButonMouseExited
+
+    private void DOdemeButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DOdemeButonMouseEntered
+        ButonAyarlari.setBgFg(DOdemeButon, Color.DARK_GRAY, Color.WHITE);
+    }//GEN-LAST:event_DOdemeButonMouseEntered
+
+    private void DOdemeButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DOdemeButonMouseExited
+       ButonAyarlari.setorijinalBgFg(DOdemeButon);
+    }//GEN-LAST:event_DOdemeButonMouseExited
+
+    private void IOdemeButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IOdemeButonMouseEntered
+        ButonAyarlari.setBgFg(IOdemeButon, Color.DARK_GRAY, Color.WHITE);
+    }//GEN-LAST:event_IOdemeButonMouseEntered
+
+    private void IOdemeButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IOdemeButonMouseExited
+       ButonAyarlari.setorijinalBgFg(IOdemeButon);
+    }//GEN-LAST:event_IOdemeButonMouseExited
+
+    private void EOdemeButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EOdemeButonMouseEntered
+        ButonAyarlari.setBgFg(EOdemeButon, Color.DARK_GRAY, Color.WHITE);
+    }//GEN-LAST:event_EOdemeButonMouseEntered
+
+    private void EOdemeButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EOdemeButonMouseExited
+       ButonAyarlari.setorijinalBgFg(EOdemeButon);
+    }//GEN-LAST:event_EOdemeButonMouseExited
 
     
     public static void main(String args[]) {
