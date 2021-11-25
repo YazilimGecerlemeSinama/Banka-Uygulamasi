@@ -32,6 +32,7 @@ public class ParaYatirmaEkrani extends javax.swing.JFrame implements Duzenleyici
         GeriIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Orenda Bank Para Yatırma Ekranı");
 
         ParaYatirmaEkraniPaneli.setBackground(new java.awt.Color(204, 204, 255));
 

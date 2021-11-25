@@ -60,6 +60,11 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
         CekilenTutarText.setText("Çekmek İstediğiniz Tutar:");
 
         ParaCekmeText.setBackground(new java.awt.Color(255, 255, 255));
+        ParaCekmeText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ParaCekmeTextActionPerformed(evt);
+            }
+        });
         ParaCekmeText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ParaCekmeTextKeyReleased(evt);
@@ -179,6 +184,10 @@ public class ParaCekmeEkrani extends javax.swing.JFrame implements Duzenleyici {
        JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştiriliyor.\n" + "Çekilen Tutar: " + CekilenMiktar  + "TL");
        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_ParaCekmeButonActionPerformed
+
+    private void ParaCekmeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParaCekmeTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ParaCekmeTextActionPerformed
 
     @Override
     public void getEdits() {
