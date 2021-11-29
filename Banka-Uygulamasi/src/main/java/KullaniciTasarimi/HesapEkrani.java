@@ -269,49 +269,49 @@ public final class HesapEkrani extends javax.swing.JFrame implements Duzenleyici
     */
     private void ParaCekmeButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ParaCekmeButonMouseEntered
         ButonAyarlari.setBgFg(ParaCekmeButon, Color.DARK_GRAY, Color.WHITE);
-        ParaCekmeIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaCekmeIcon2.png")); // NOI18N
+        ParaCekmeIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaCekmeIcon2.png")); 
        
     }//GEN-LAST:event_ParaCekmeButonMouseEntered
 
     private void ParaCekmeButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ParaCekmeButonMouseExited
         ButonAyarlari.setorijinalBgFg(ParaCekmeButon);
-        ParaCekmeIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaCekmeIcon.png")); // NOI18N
+        ParaCekmeIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaCekmeIcon.png")); 
        
     }//GEN-LAST:event_ParaCekmeButonMouseExited
 
     private void ParaYatirmaButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ParaYatirmaButonMouseEntered
         ButonAyarlari.setBgFg(ParaYatirmaButon, Color.DARK_GRAY, Color.WHITE);
-        ParaYatirmaIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaYatirmaIcon2.png")); // NOI18N
+        ParaYatirmaIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaYatirmaIcon2.png")); 
        
     }//GEN-LAST:event_ParaYatirmaButonMouseEntered
 
     private void ParaYatirmaButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ParaYatirmaButonMouseExited
         ButonAyarlari.setorijinalBgFg(ParaYatirmaButon);
-        ParaYatirmaIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaYatirmaIcon.png")); // NOI18N
+        ParaYatirmaIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\ParaYatirmaIcon.png")); 
        
     }//GEN-LAST:event_ParaYatirmaButonMouseExited
 
     private void HavaleButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HavaleButonMouseEntered
         ButonAyarlari.setBgFg(HavaleButon, Color.DARK_GRAY, Color.WHITE);
-        HavaleIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\HavaleIcon2.png")); // NOI18N
+        HavaleIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\HavaleIcon2.png")); 
        
     }//GEN-LAST:event_HavaleButonMouseEntered
 
     private void HavaleButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HavaleButonMouseExited
         ButonAyarlari.setorijinalBgFg(HavaleButon);
-        HavaleIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\HavaleIcon.png")); // NOI18N
+        HavaleIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\HavaleIcon.png")); 
        
     }//GEN-LAST:event_HavaleButonMouseExited
 
     private void ÖdemeButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ÖdemeButonMouseEntered
         ButonAyarlari.setBgFg(ÖdemeButon, Color.DARK_GRAY, Color.WHITE); 
-        ÖdemelerIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\OdemelerIcon2.png")); // NOI18N
+        ÖdemelerIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\OdemelerIcon2.png")); 
        
     }//GEN-LAST:event_ÖdemeButonMouseEntered
 
     private void ÖdemeButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ÖdemeButonMouseExited
         ButonAyarlari.setorijinalBgFg(ÖdemeButon);
-        ÖdemelerIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\OdemelerIcon.png")); // NOI18N
+        ÖdemelerIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\merve\\OneDrive\\Belgeler\\NetBeansProjects\\Banka-Uygulamasi\\src\\main\\java\\KullaniciTasarimi\\İconlar\\OdemelerIcon.png")); 
        
     }//GEN-LAST:event_ÖdemeButonMouseExited
 

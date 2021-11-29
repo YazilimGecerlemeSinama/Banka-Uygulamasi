@@ -9,7 +9,7 @@ import java.awt.Color;
 public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici {
 
     private final String KimlikTextOrijinal = "T.C. No / Müşteri No";
-    private final String SifreTextOrijinal = "********";
+    private final String SifreTextOrijinal = "*********";
     public GirisEkrani() {
         initComponents();
         getEdits();

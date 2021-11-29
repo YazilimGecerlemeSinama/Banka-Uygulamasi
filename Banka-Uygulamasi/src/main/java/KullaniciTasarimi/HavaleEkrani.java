@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
 
 public class HavaleEkrani extends javax.swing.JFrame implements Duzenleyici{
 
-   
+    
+    private final String MusteriNoTextOrijinal = "Müşteri No";
+    private int GönderilenMiktar = 0;
     
     public HavaleEkrani() {
         initComponents();
@@ -179,19 +181,30 @@ public class HavaleEkrani extends javax.swing.JFrame implements Duzenleyici{
 
     @Override
     public void getEdits() {
+        this.setLocationRelativeTo(null);
+        HavaleEkraniPaneli.setFocusable(true);
+        MusteriNoText.setText(MusteriNoTextOrijinal);
+        TextAyarlari.setOnlyNumber(HavaleText);
+        TextAyarlari.setMaxLimit(HavaleText, 5);
+        TextAyarlari.setOnlyNumber(MusteriNoText);
+        TextAyarlari.setMaxLimit(MusteriNoText, 8);
         
+
     }
     
     private void ParaGönderButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParaGönderButonActionPerformed
-        
+        JOptionPane.showMessageDialog(this, "İşleminiz Gerçekleştiriliyor.\n" + "Gönderilen Tutar: " + GönderilenMiktar  + "TL");
+        ActionAyarlari.setVisible(this, new HesapEkrani());
+       
     }//GEN-LAST:event_ParaGönderButonActionPerformed
 
     private void GeriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GeriIconMouseClicked
-        
+         ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_GeriIconMouseClicked
 
     private void HavaleTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HavaleTextKeyReleased
-         
+         this.GönderilenMiktar = TextAyarlari.checkTheTextKeyReleased(HavaleText, 10000);
+       
     }//GEN-LAST:event_HavaleTextKeyReleased
 
     private void HavaleTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HavaleTextActionPerformed
