@@ -3,21 +3,47 @@ package KullaniciTasarimi;
 
 import KullaniciTasarimi.ayarlar.ActionAyarlari;
 import KullaniciTasarimi.ayarlar.ButonAyarlari;
+import KullaniciTasarimi.ayarlar.Dialog;
 import KullaniciTasarimi.ayarlar.Duzenleyici;
 import KullaniciTasarimi.ayarlar.TextAyarlari;
+import database.IBilgiController;
+import database.transactions.HesapBilgileri;
+import database.transactions.KullaniciBasvuru;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
 
-public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
+public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici, IBilgiController{
 
+    private KullaniciBasvuru kullaniciBasvuruObject = null;
     
     public BasvuruEkrani() {
         initComponents();
         getEdits();
         
     }
+    @Override
+    public void getEdits() {
+        this.setLocationRelativeTo(null);
+        BasvuruEkraniPaneli.setFocusable(true);
+        TextAyarlari.setOnlyAlphabetic(AdSoyadField);
+        TextAyarlari.setOnlyNumber(TCNoField);
+        TextAyarlari.setOnlyNumber(TelefonNoField);
+        TextAyarlari.setMaxLimit(TCNoField, 11);
+        TextAyarlari.setMaxLimit(TelefonNoField, 11);
+    }
 
+    public KullaniciBasvuru getKullaniciBasvuruObject() {
+        if(this.kullaniciBasvuruObject == null){
+            kullaniciBasvuruObject = new KullaniciBasvuru();
+        }
+        return kullaniciBasvuruObject;
+    }
+    
+    
+    
+            
+            
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -198,25 +224,63 @@ public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
     }// </editor-fold>//GEN-END:initComponents
 
     @Override
-    public void getEdits() {
-        this.setLocationRelativeTo(null);
-        BasvuruEkraniPaneli.setFocusable(true);
-        TextAyarlari.setOnlyAlphabetic(AdSoyadField);
-        TextAyarlari.setOnlyNumber(TCNoField);
-        TextAyarlari.setOnlyNumber(TelefonNoField);
-        TextAyarlari.setMaxLimit(TCNoField, 11);
-        TextAyarlari.setMaxLimit(TelefonNoField, 11);
+    public boolean bilgilerGecerliMi() {
+        return TextAyarlari.textAlaniDolumu(BasvuruEkraniPaneli);
+    }
+
+    @Override
+    public HesapBilgileri getHesapBilgileri() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     private void AdSoyadFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdSoyadFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AdSoyadFieldActionPerformed
 
+    
     private void BasvurButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasvurButonActionPerformed
-        JOptionPane.showMessageDialog(this, "Başvurunuz kabul edilmiştir.");
-        ActionAyarlari.setVisible(this, new GirisEkrani());
+        if(this.bilgilerGecerliMi()){
+            this.basvuruyuGerceklestir();
+        }
+        else{
+            Dialog.bosOlamazMesajiGoster(this);            
+        }
+        
     }//GEN-LAST:event_BasvurButonActionPerformed
 
+    private void basvuruyuGerceklestir(){
+        
+
+        //kişisel bilgiler
+        this.getKullaniciBasvuruObject().setAdSoyad(this.AdSoyadField.getText().trim());
+        this.getKullaniciBasvuruObject().setTcNo(this.TCNoField.getText().trim());
+        this.getKullaniciBasvuruObject().setTelNo(this.TelefonNoField.getText().trim());
+        
+        // güvenlik bilgileri
+        this.getKullaniciBasvuruObject().setGuvenlikSorusu(String.valueOf(this.GuvenlikSorusu.getSelectedItem()));
+        this.getKullaniciBasvuruObject().setGuvenlikCevap(this.CevapField.getText().trim());
+        
+        // sistem tarafından verilecek bilgiler
+        this.getKullaniciBasvuruObject().setMusteriNo(this.randomMusteriNoAl());
+        this.getKullaniciBasvuruObject().setSifre(this.randomSifreAl());
+        
+        Dialog.OzelMesajGoster(this, "Başvurunuz kabul edilmiştir...");
+        ActionAyarlari.setVisible(this, new GirisEkrani());
+        
+    }
+    
+    private String randomMusteriNoAl(){
+        String musteriNo;
+        musteriNo = String.valueOf(100000 + (int)(Math.random()* 9000000));
+        return musteriNo;
+    }
+    
+    private String randomSifreAl(){
+        String sifre;
+        sifre = String.valueOf(1000 + (int)(Math.random()*9000));
+        return sifre;
+    }
+            
     private void BasvurButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BasvurButonMouseEntered
         ButonAyarlari.setBgFg(BasvurButon, Color.DARK_GRAY, Color.WHITE);
     }//GEN-LAST:event_BasvurButonMouseEntered
@@ -251,6 +315,8 @@ public class BasvuruEkrani extends javax.swing.JFrame implements Duzenleyici{
     private javax.swing.JTextField TelefonNoField;
     private javax.swing.JLabel TelefonNoText1;
     // End of variables declaration//GEN-END:variables
+
+    
 
     
 }
