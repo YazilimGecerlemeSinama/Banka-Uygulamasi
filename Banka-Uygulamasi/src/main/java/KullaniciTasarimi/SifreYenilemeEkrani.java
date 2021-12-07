@@ -2,12 +2,8 @@
 package KullaniciTasarimi;
 
 import KullaniciTasarimi.ayarlar.ActionAyarlari;
-import KullaniciTasarimi.ayarlar.ButonAyarlari;
 import KullaniciTasarimi.ayarlar.Duzenleyici;
-import KullaniciTasarimi.ayarlar.TextAyarlari;
-import java.awt.Color;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 
 public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyici{
 
@@ -29,8 +25,8 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
         TCNoText = new javax.swing.JTextField();
         TelefonNoText = new javax.swing.JTextField();
         EskiSText = new javax.swing.JLabel();
-        GSorusuText = new javax.swing.JTextField();
-        GSoruText = new javax.swing.JLabel();
+        TCNoText2 = new javax.swing.JTextField();
+        SoruText = new javax.swing.JLabel();
         TelNoText = new javax.swing.JLabel();
         YeniSText = new javax.swing.JLabel();
         YeniSsText = new javax.swing.JLabel();
@@ -75,14 +71,14 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
         EskiSText.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         EskiSText.setText("Eski Şifre:");
 
-        GSorusuText.setBackground(new java.awt.Color(255, 255, 255));
-        GSorusuText.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        GSorusuText.setForeground(new java.awt.Color(0, 102, 102));
+        TCNoText2.setBackground(new java.awt.Color(255, 255, 255));
+        TCNoText2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        TCNoText2.setForeground(new java.awt.Color(0, 102, 102));
 
-        GSoruText.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        GSoruText.setForeground(new java.awt.Color(0, 102, 102));
-        GSoruText.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        GSoruText.setText("Güvenlik Sorusunun Cevabı:");
+        SoruText.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        SoruText.setForeground(new java.awt.Color(0, 102, 102));
+        SoruText.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        SoruText.setText("Güvenlik Sorusunun Cevabı:");
 
         TelNoText.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         TelNoText.setForeground(new java.awt.Color(0, 102, 102));
@@ -116,14 +112,6 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
         DevamButon.setForeground(new java.awt.Color(255, 255, 255));
         DevamButon.setText("Devam");
         DevamButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        DevamButon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                DevamButonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                DevamButonMouseExited(evt);
-            }
-        });
         DevamButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DevamButonActionPerformed(evt);
@@ -148,9 +136,9 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
                                 .addGap(18, 18, 18)
                                 .addComponent(TelefonNoText))
                             .addGroup(SifreYenilemeEkraniPaneliLayout.createSequentialGroup()
-                                .addComponent(GSoruText)
+                                .addComponent(SoruText)
                                 .addGap(18, 18, 18)
-                                .addComponent(GSorusuText))
+                                .addComponent(TCNoText2))
                             .addGroup(SifreYenilemeEkraniPaneliLayout.createSequentialGroup()
                                 .addComponent(EskiSText, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -177,9 +165,9 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
                 .addGap(61, 61, 61))
         );
 
-        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {EskiSText, GSoruText, TcNoText, TelNoText, YeniSText, YeniSsText});
+        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {EskiSText, SoruText, TcNoText, TelNoText, YeniSText, YeniSsText});
 
-        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {EskiSifreText, GSorusuText, YaniSifreText, YeniSifreTextt});
+        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {EskiSifreText, TCNoText2, YaniSifreText, YeniSifreTextt});
 
         SifreYenilemeEkraniPaneliLayout.setVerticalGroup(
             SifreYenilemeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,8 +188,8 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
                             .addComponent(TelNoText, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(SifreYenilemeEkraniPaneliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GSoruText, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GSorusuText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SoruText, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TCNoText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(EskiSText, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(EskiSifreText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -218,9 +206,9 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {EskiSText, GSoruText, TcNoText, TelNoText, YeniSText, YeniSsText});
+        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {EskiSText, SoruText, TcNoText, TelNoText, YeniSText, YeniSsText});
 
-        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {EskiSifreText, GSorusuText, YaniSifreText, YeniSifreTextt});
+        SifreYenilemeEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {EskiSifreText, TCNoText2, YaniSifreText, YeniSifreTextt});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -236,50 +224,22 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JPasswordField getEskiSifreText(){
-        return EskiSifreText;  
-    }
-    private boolean isEnableEskiSifreText(){
-        return this.getEskiSifreText().isEnabled();
-    }
-    
-    @Override
+     @Override
     public void getEdits() {
         this.setLocationRelativeTo(null);
         SifreYenilemeEkraniPaneli.setFocusable(true);
-        TextAyarlari.setOnlyNumber(TCNoText);
-        TextAyarlari.setMaxLimit(TCNoText, 11);
-        TextAyarlari.setOnlyNumber(TelefonNoText);
-        TextAyarlari.setMaxLimit(TelefonNoText, 11);
     }
     private void GeriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GeriIconMouseClicked
-        if(isEnableEskiSifreText()){
-            ActionAyarlari.setVisible(this, new AyarlarEkrani());
-        }
-        else{
-            ActionAyarlari.setVisible(this, new GirisEkrani());
-        }
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_GeriIconMouseClicked
 
     private void DevamButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DevamButonActionPerformed
         JOptionPane.showMessageDialog(this, "Şifreniz Değiştirildi.");
-        ActionAyarlari.setVisible(this, new GirisEkrani());
-        if(isEnableEskiSifreText()){
-            ActionAyarlari.setVisible(this, new HesapEkrani());
-        }
-        else{
-            ActionAyarlari.setVisible(this, new GirisEkrani());
-        }
+        ActionAyarlari.setVisible(this, new HesapEkrani());
     }//GEN-LAST:event_DevamButonActionPerformed
 
-    private void DevamButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DevamButonMouseEntered
-        ButonAyarlari.setBgFg(DevamButon, Color.DARK_GRAY, Color.WHITE);
-    }//GEN-LAST:event_DevamButonMouseEntered
-
-    private void DevamButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DevamButonMouseExited
-        ButonAyarlari.setorijinalBgFg(DevamButon);
-    }//GEN-LAST:event_DevamButonMouseExited
-  
+   
+   
     public static void main(String args[]) {
        
         try {
@@ -310,12 +270,14 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements Duzenleyi
     private javax.swing.JButton DevamButon;
     private javax.swing.JLabel EskiSText;
     private javax.swing.JPasswordField EskiSifreText;
-    private javax.swing.JLabel GSoruText;
-    private javax.swing.JTextField GSorusuText;
     private javax.swing.JLabel GeriIcon;
+    private javax.swing.JButton ParaYatirmaButon;
+    private javax.swing.JButton ParaYatirmaButon1;
     private javax.swing.JPanel SifreYenilemeEkraniPaneli;
+    private javax.swing.JLabel SoruText;
     private javax.swing.JLabel SİfreYenilemeText;
     private javax.swing.JTextField TCNoText;
+    private javax.swing.JTextField TCNoText2;
     private javax.swing.JLabel TcNoText;
     private javax.swing.JLabel TelNoText;
     private javax.swing.JTextField TelefonNoText;

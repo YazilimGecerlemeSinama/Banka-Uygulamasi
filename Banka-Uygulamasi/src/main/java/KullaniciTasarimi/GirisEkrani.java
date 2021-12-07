@@ -28,17 +28,12 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
         BasvurText = new javax.swing.JLabel();
         TCNOText = new javax.swing.JTextField();
         SifreText = new javax.swing.JPasswordField();
-        SifremiUnuttumText = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Orenda Bank Giris Ekranı");
 
         GirisEkraniPaneli.setBackground(new java.awt.Color(204, 204, 255));
-        GirisEkraniPaneli.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                GirisEkraniPaneliMouseClicked(evt);
-            }
-        });
 
         OrendaBankText.setFont(new java.awt.Font("Forte", 1, 40)); // NOI18N
         OrendaBankText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -113,14 +108,14 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
             }
         });
 
-        SifremiUnuttumText.setFont(new java.awt.Font("Times New Roman", 1, 10)); // NOI18N
-        SifremiUnuttumText.setForeground(new java.awt.Color(0, 0, 0));
-        SifremiUnuttumText.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        SifremiUnuttumText.setText("Şifremi Unuttum");
-        SifremiUnuttumText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SifremiUnuttumText.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Şifremi Unuttum");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SifremiUnuttumTextMouseClicked(evt);
+                jLabel1MouseClicked(evt);
             }
         });
 
@@ -138,11 +133,11 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
                     .addComponent(GirisButon, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BasvurText)
                     .addComponent(BasvurButon)
-                    .addComponent(SifremiUnuttumText, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77))
         );
 
-        GirisEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {SifreText, SifremiUnuttumText, TCNOText});
+        GirisEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {SifreText, TCNOText, jLabel1});
 
         GirisEkraniPaneliLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BasvurButon, GirisButon});
 
@@ -158,7 +153,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
                 .addGap(18, 18, 18)
                 .addComponent(SifreText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SifremiUnuttumText, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(GirisButon)
                 .addGap(66, 66, 66)
@@ -250,15 +245,9 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
         ActionAyarlari.setVisible(this, new BasvuruEkrani());
     }//GEN-LAST:event_BasvurButonActionPerformed
 
-    private void SifremiUnuttumTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SifremiUnuttumTextMouseClicked
-        SifreYenilemeEkrani SifreYenilemeEkrani = new SifreYenilemeEkrani();
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         ActionAyarlari.setVisible(this, new SifreYenilemeEkrani());
-        SifreYenilemeEkrani.getEskiSifreText().setEnabled(false);
-    }//GEN-LAST:event_SifremiUnuttumTextMouseClicked
-
-    private void GirisEkraniPaneliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GirisEkraniPaneliMouseClicked
-        
-    }//GEN-LAST:event_GirisEkraniPaneliMouseClicked
+    }//GEN-LAST:event_jLabel1MouseClicked
 
   
     public static void main(String args[]) {
@@ -278,8 +267,8 @@ public final class GirisEkrani extends javax.swing.JFrame implements Duzenleyici
     private javax.swing.JLabel HoşGeldinizText;
     private javax.swing.JLabel OrendaBankText;
     private javax.swing.JPasswordField SifreText;
-    private javax.swing.JLabel SifremiUnuttumText;
     private javax.swing.JTextField TCNOText;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
     
